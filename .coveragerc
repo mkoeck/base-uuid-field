@@ -1,0 +1,10 @@
+[run]
+source = .
+branch = True
+omit = 
+    */tests/*
+    */__init__.py
+    */__manifest__.py
+
+[report]
+show_missing = True

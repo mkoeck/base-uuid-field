@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="base_uuid_field.UUIDField">
+        <t t-if="props.readonly">
+            <div class="o_field_widget o_field_uuid d-inline-flex align-items-center w-100 position-relative">
+                <span class="o_text_overflow" t-esc="value"/>
+                <div class="o_field_input_buttons ms-1">
+                    <CopyButton
+                        t-if="value"
+                        className="'o_clipboard_button btn btn-sm lh-1' "
+                        content="value"
+                        successText="'UUID Copied'"
+                        icon="'fa-clone'"
+                    />
+                    <!-- Generate button doesn't make sense in readonly mode -->
+                </div>
+            </div>
+        </t>
+        <t t-else="">
+            <div class="o_field_widget o_field_uuid d-inline-flex align-items-center w-100 position-relative">
+                <input
+                    class="o_input"
+                    t-att-class="{
+                        'o_field_translate': isTranslatable,
+                    }"
+                    t-att-id="props.id"
+                    type="text"
+                    autocomplete="off"
+                    t-att-placeholder="props.placeholder"
+                    t-ref="input"
+                />
+                <div class="o_field_input_buttons">
+                    <!-- Keep TranslationButton for consistency, even if unused -->
+                    <TranslationButton
+                        t-if="isTranslatable"
+                        fieldName="props.name"
+                        record="props.record"
+                    />
+                    <CopyButton
+                        t-if="value"
+                        className="'o_clipboard_button btn btn-sm lh-1'"
+                        content="value"
+                        successText="'UUID Copied'"
+                        icon="'fa-clone'"
+                    />
+                     <button
+                        t-if="!props.readonly"
+                        type="button"
+                        class="btn btn-sm lh-1 o_uuid_generate_button"
+                        t-attf-class="{{ value ? 'ms-1' : '' }}"
+                        aria-label="Generate new UUID"
+                        title="Generate new UUID"
+                        t-on-click.prevent="generateUUID"
+                     >
+                         <i class="fa fa-cogs"/>
+                     </button>
+                </div>
+            </div>
+        </t>
+    </t>
+
+</templates>
