@@ -29,6 +29,8 @@ Long description of module's purpose
 
     'assets': {
         'web.assets_backend': [
+            'base_uuid_field/static/src/core/uuid_button/uuid_button.js',
+            'base_uuid_field/static/src/core/uuid_button/uuid_button.xml',
             'base_uuid_field/static/src/views/fields/uuid/uuid_field.js',
             'base_uuid_field/static/src/views/fields/uuid/uuid_field.xml',
             'base_uuid_field/static/src/views/fields/uuid/uuid_field.scss',
