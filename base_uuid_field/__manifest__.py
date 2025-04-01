@@ -1,39 +1,22 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "base_uuid_field",
-
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
-
+    'name': "UUID Fields",
+    'summary': "Implementation of UUID fields.",
     'description': """
-Long description of module's purpose
+The purpose of this module is to implement UUID fields, i.e., fields that are universally unique identifiers.
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "Michael Köck",
+    'license': 'LGPL-3',
 
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
+    'category': 'Generic Modules',
+    'version': '18.0.1.0.0',
 
-    # any module necessary for this one to work correctly
     'depends': ['base'],
-
-    # always loaded
-    'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
-    ],
 
     'assets': {
         'web.assets_backend': [
-            'base_uuid_field/static/src/core/uuid_button/uuid_button.js',
-            'base_uuid_field/static/src/core/uuid_button/uuid_button.xml',
-            'base_uuid_field/static/src/views/fields/uuid/uuid_field.js',
-            'base_uuid_field/static/src/views/fields/uuid/uuid_field.xml',
-            'base_uuid_field/static/src/views/fields/uuid/uuid_field.scss',
+            'base_uuid_field/static/src/**/*',
         ],
     },
 }
