@@ -11,9 +11,7 @@ export class UUIDButton extends Component {
         disabled: { type: Boolean, optional: true },
         successText: { type: String, optional: true },
         icon: { type: String, optional: true },
-        onGenerate: { type: Function, optional: true},
-        record: { type: Object, optional: true},
-        name: { type: String, optional: true}
+        onGenerate: { type: Function, optional: false},
     };
 
     setup() {
