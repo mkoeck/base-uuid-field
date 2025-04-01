@@ -4,15 +4,6 @@
         .o_clipboard_button {
             border: none;
         }
-        > span:first-child, a {
-            margin-left: 4px;
-            margin-right: 4px;
-            align-self: center;
-            text-align: center;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
     }
 }
 

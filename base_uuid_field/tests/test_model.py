@@ -1,6 +1,7 @@
 from odoo_test_helper import FakeModelLoader
 from odoo.tests import TransactionCase
 from uuid import uuid4, UUID
+from odoo.exceptions import ValidationError
 
 class TestModel(TransactionCase):
     @classmethod
@@ -50,6 +51,11 @@ class TestModel(TransactionCase):
         self.assertEqual(record.external_id, uuid)
         self.assertIsInstance(record.external_id, UUID)
         self.assertEqual(db_uuid, str(uuid))
+
+    def test_create_from_invalid_string(self):
+        invalid_uuid = 'invalid-uuid-string'
+        with self.assertRaises(ValidationError):
+            self.env['uuid.test'].create({'external_id': invalid_uuid})
 
     def test_write_from_string(self):
         uuid = '86223127-1c62-49f2-af41-9fba7c3ddde3'

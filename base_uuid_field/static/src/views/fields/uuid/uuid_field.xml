@@ -3,7 +3,9 @@
     <t t-name="base_uuid_field.UUIDField">
         <div class="d-grid rounded-2 overflow-hidden">
             <Field t-props="fieldProps"/>
-            <UUIDButton onGenerate="setUUID" record="props.record" name="props.name" className="copyButtonClassName" icon="uuidButtonIcon" successText="uuidSucessText" disabled="props.readonly"/>
+            <t t-if="!props.readonly">
+                <UUIDButton onGenerate="setUUID" className="uuidButtonClassName" icon="uuidButtonIcon" successText="uuidSucessText"/>
+            </t>
             <CopyButton className="copyButtonClassName" content="props.record.data[props.name]" icon="copyButtonIcon" successText="successText"/>
         </div>
     </t>
